@@ -6,11 +6,8 @@ module RailsHealthChecker
     end
 
     def call(env)
-      case env['PATH_INFO']
-      when '/health'
+      if env['PATH_INFO'] == '/health'
         authenticate(env) ? dashboard_response : unauthorized_response
-      when '/health/security'
-        authenticate(env) ? security_details_response : unauthorized_response
       else
         @app.call(env)
       end

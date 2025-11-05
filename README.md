@@ -54,12 +54,16 @@ rake health:database
 
 ### HTTP Health Dashboard
 
-The gem automatically adds a `/health` endpoint with a comprehensive web dashboard:
+The gem automatically adds protected `/health` endpoints with comprehensive web dashboards:
 
 ```bash
-# Visit in browser
+# Main dashboard (requires authentication)
 http://localhost:3000/health
 ```
+
+**Authentication:**
+- Default: username `admin`, password `health123`
+- Custom: Set `HEALTH_USERNAME` and `HEALTH_PASSWORD` environment variables
 
 **Dashboard Features:**
 - 🏥 Visual health overview with status indicators
@@ -67,13 +71,38 @@ http://localhost:3000/health
 - 🔧 System information (Rails/Ruby versions)
 - 💾 Database connectivity status
 - 📦 Gem dependencies analysis
-- 🔒 Security vulnerability overview
+- 🔒 Security vulnerability overview with detailed list
 - 🎯 Priority actions with color-coded urgency
 - 🔄 Auto-refresh every 30 seconds
+- 🔐 Password-protected access
 
 ## Configuration
 
 The gem works out of the box with minimal configuration. The health middleware is automatically added to your Rails application.
+
+### Authentication Configuration
+
+```bash
+# Set custom credentials (optional)
+export HEALTH_USERNAME=your_username
+export HEALTH_PASSWORD=your_secure_password
+```
+
+**Default credentials:**
+- Username: `admin`
+- Password: `health123`
+
+### Manual Middleware Setup (if needed)
+
+If the middleware doesn't load automatically, add to `config/application.rb`:
+
+```ruby
+require 'rails_health_checker'
+
+class Application < Rails::Application
+  config.middleware.use RailsHealthChecker::DashboardMiddleware
+end
+```
 
 ## Development
 
