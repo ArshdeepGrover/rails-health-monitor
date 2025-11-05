@@ -2,17 +2,46 @@ module RailsHealthChecker
   class DashboardMiddleware
     def initialize(app)
       @app = app
+      require 'rack/auth/basic'
     end
 
     def call(env)
-      if env['PATH_INFO'] == '/health'
-        dashboard_response
+      case env['PATH_INFO']
+      when '/health'
+        authenticate(env) ? dashboard_response : unauthorized_response
+      when '/health/security'
+        authenticate(env) ? security_details_response : unauthorized_response
       else
         @app.call(env)
       end
     end
 
     private
+
+    def authenticate(env)
+      auth = Rack::Auth::Basic::Request.new(env)
+      auth.provided? && auth.basic? && auth.credentials && 
+        auth.credentials == [username, password]
+    end
+
+    def username
+      ENV['HEALTH_USERNAME'] || 'admin'
+    end
+
+    def password
+      ENV['HEALTH_PASSWORD'] || 'health123'
+    end
+
+    def unauthorized_response
+      [
+        401,
+        {
+          'Content-Type' => 'text/html',
+          'WWW-Authenticate' => 'Basic realm="Health Dashboard"'
+        },
+        ['<h1>401 Unauthorized</h1><p>Please provide valid credentials.</p>']
+      ]
+    end
 
     def dashboard_response
       results = RailsHealthChecker::Checker.new.run
