@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails-health-monitor (0.1.0)
+    rails-health-monitor (1.1.2)
       bundler (>= 2.0)
       rails (>= 6.0)
 
