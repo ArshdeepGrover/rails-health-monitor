@@ -34,4 +34,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🔄 Auto-refresh every 30 seconds
 - 🔐 Password-protected access
 
-[0.1.0]: https://github.com/ArshdeepGrover/rails-health-checker/releases/tag/v0.1.0
+[0.1.0]: https://github.com/ArshdeepGrover/rails-health-monitor/releases/tag/v0.1.0

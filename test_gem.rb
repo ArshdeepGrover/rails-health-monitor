@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Simple test script to verify gem functionality
-require_relative 'lib/rails_health_checker'
+require_relative 'lib/rails_health_monitor'
 
 # Mock Rails and ActiveRecord for testing
 module Rails

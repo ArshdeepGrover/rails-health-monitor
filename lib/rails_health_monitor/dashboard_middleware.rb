@@ -1,4 +1,4 @@
-module RailsHealthChecker
+module RailsHealthMonitor
   class DashboardMiddleware
     def initialize(app)
       @app = app
@@ -41,7 +41,7 @@ module RailsHealthChecker
     end
 
     def dashboard_response
-      results = RailsHealthChecker::Checker.new.run
+      results = RailsHealthMonitor::Checker.new.run
       
       [
         200,

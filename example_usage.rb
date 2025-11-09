@@ -1,7 +1,7 @@
 # Example usage in a Rails application
 
 # 1. Add to Gemfile:
-# gem 'rails_health_checker'
+# gem 'rails_health_monitor'
 
 # 2. In your Rails application, you can use:
 

@@ -29,14 +29,14 @@ Security: needs_attention
 
 ### Quick Test:
 ```bash
-cd rails_health_checker
+cd rails_health_monitor
 ruby simple_test.rb
 ```
 
 ### Full Rails Test:
 ```bash
 # Add to any Rails project Gemfile:
-gem 'rails_health_checker', path: '/path/to/rails_health_checker'
+gem 'rails_health_monitor', path: '/path/to/rails_health_monitor'
 
 # Install and test:
 bundle install

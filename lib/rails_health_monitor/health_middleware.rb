@@ -1,4 +1,4 @@
-module RailsHealthChecker
+module RailsHealthMonitor
   class HealthMiddleware
     def initialize(app)
       @app = app

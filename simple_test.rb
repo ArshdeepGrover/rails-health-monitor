@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative 'lib/rails_health_checker/version'
-require_relative 'lib/rails_health_checker/gem_analyzer'
+require_relative 'lib/rails_health_monitor/version'
+require_relative 'lib/rails_health_monitor/gem_analyzer'
 
 puts "=== Simple Gem Test ==="
 puts "Version: #{RailsHealthChecker::VERSION}"

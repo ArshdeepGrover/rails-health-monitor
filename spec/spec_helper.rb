@@ -1,4 +1,4 @@
-require "rails_health_checker"
+require "rails_health_monitor"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|

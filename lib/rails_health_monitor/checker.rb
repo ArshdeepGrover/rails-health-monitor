@@ -1,4 +1,4 @@
-module RailsHealthChecker
+module RailsHealthMonitor
   class Checker
     def run
       results = {

@@ -1,12 +1,12 @@
 namespace :health do
   desc "Run comprehensive health check"
   task check: :environment do
-    RailsHealthChecker.check
+    RailsHealthMonitor.check
   end
 
   desc "Check gem dependencies"
   task gems: :environment do
-    analyzer = RailsHealthChecker::GemAnalyzer.new
+    analyzer = RailsHealthMonitor::GemAnalyzer.new
     results = analyzer.analyze
     
     puts "=== Gem Health Report ==="
@@ -28,7 +28,7 @@ namespace :health do
 
   desc "Check background jobs health"
   task jobs: :environment do
-    analyzer = RailsHealthChecker::JobAnalyzer.new
+    analyzer = RailsHealthMonitor::JobAnalyzer.new
     results = analyzer.analyze
     
     puts "=== Background Jobs Health ==="
@@ -55,8 +55,8 @@ namespace :health do
 
   desc "Generate detailed health report file"
   task report: :environment do
-    results = RailsHealthChecker::Checker.new.run
-    report_generator = RailsHealthChecker::ReportGenerator.new(results)
+    results = RailsHealthMonitor::Checker.new.run
+    report_generator = RailsHealthMonitor::ReportGenerator.new(results)
     filename = report_generator.save_to_file
     puts "📄 Health report updated: #{filename}"
   end

@@ -1,8 +1,8 @@
 require "spec_helper"
 
-RSpec.describe RailsHealthChecker do
+RSpec.describe RailsHealthMonitor do
   it "has a version number" do
-    expect(RailsHealthChecker::VERSION).not_to be nil
+    expect(RailsHealthMonitor::VERSION).not_to be nil
   end
 
   describe ".check" do
@@ -11,7 +11,7 @@ RSpec.describe RailsHealthChecker do
       allow(Rails).to receive(:version).and_return("7.0.0")
       allow(ActiveRecord::Base).to receive_message_chain(:connection, :active?).and_return(true)
       
-      results = RailsHealthChecker.check
+      results = RailsHealthMonitor.check
       expect(results).to be_a(Hash)
       expect(results).to have_key(:rails_version)
       expect(results).to have_key(:database)

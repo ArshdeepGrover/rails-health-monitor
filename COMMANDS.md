@@ -20,7 +20,7 @@ bundle exec rake build
 ## Release Process
 
 ### 1. Update Version
-Edit `lib/rails_health_checker/version.rb`:
+Edit `lib/rails_health_monitor/version.rb`:
 ```ruby
 VERSION = "x.x.x"
 ```
@@ -48,10 +48,10 @@ This command will:
 ### Manual Release (if needed)
 ```bash
 # Build
-gem build rails-health-checker.gemspec
+gem build rails-health-monitor.gemspec
 
 # Push to RubyGems
-gem push rails-health-checker-x.x.x.gem
+gem push rails-health-monitor-x.x.x.gem
 
 # Tag and push
 git tag vx.x.x
@@ -69,8 +69,8 @@ rake health:database     # Check database connectivity
 
 ### Programmatic
 ```ruby
-results = RailsHealthChecker.check
-analyzer = RailsHealthChecker::GemAnalyzer.new
+results = RailsHealthMonitor.check
+analyzer = RailsHealthMonitor::GemAnalyzer.new
 gem_health = analyzer.analyze
 ```
 
@@ -105,10 +105,10 @@ scp -r docs/ user@server:/path/to/docs
 ### Verify Deployment
 ```bash
 # Check gem is live
-gem search rails-health-checker
+gem search rails-health-monitor
 
 # Test installation
-gem install rails-health-checker
+gem install rails-health-monitor
 ```
 
 ## Environment Variables

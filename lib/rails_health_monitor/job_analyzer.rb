@@ -1,4 +1,4 @@
-module RailsHealthChecker
+module RailsHealthMonitor
   class JobAnalyzer
     def analyze
       {

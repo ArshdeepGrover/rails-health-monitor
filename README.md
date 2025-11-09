@@ -1,12 +1,12 @@
-# RailsHealthChecker
+# RailsHealthMonitor
 
-[![Gem Version](https://badge.fury.io/rb/rails-health-checker.svg)](https://badge.fury.io/rb/rails-health-checker)
-[![Documentation](https://img.shields.io/badge/docs-rails--health--checker.netlify.app-blue)](https://rails-health-checker.netlify.app)
-[![GitHub](https://img.shields.io/github/license/ArshdeepGrover/rails-health-checker)](https://github.com/ArshdeepGrover/rails-health-checker/blob/main/LICENSE)
+[![Gem Version](https://badge.fury.io/rb/rails-health-monitor.svg)](https://badge.fury.io/rb/rails-health-monitor)
+[![Documentation](https://img.shields.io/badge/docs-rails--health--monitor.netlify.app-blue)](https://rails-health-monitor.netlify.app)
+[![GitHub](https://img.shields.io/github/license/ArshdeepGrover/rails-health-monitor)](https://github.com/ArshdeepGrover/rails-health-monitor/blob/main/LICENSE)
 
 A comprehensive health checking gem for Ruby on Rails applications and their dependencies.
 
-🌐 **[Live Documentation & Demo](https://rails-health-checker.netlify.app)**
+🌐 **[Live Documentation & Demo](https://rails-health-monitor.netlify.app)**
 
 ## Features
 
@@ -23,7 +23,7 @@ A comprehensive health checking gem for Ruby on Rails applications and their dep
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rails-health-checker'
+gem 'rails-health-monitor'
 ```
 
 And then execute:
@@ -35,7 +35,7 @@ bundle install
 Or install it directly:
 
 ```bash
-gem install rails-health-checker
+gem install rails-health-monitor
 ```
 
 ## Usage
@@ -44,10 +44,10 @@ gem install rails-health-checker
 
 ```ruby
 # Run complete health check
-results = RailsHealthChecker.check
+results = RailsHealthMonitor.check
 
 # Check specific components
-analyzer = RailsHealthChecker::GemAnalyzer.new
+analyzer = RailsHealthMonitor::GemAnalyzer.new
 gem_health = analyzer.analyze
 ```
 
@@ -109,10 +109,10 @@ export HEALTH_PASSWORD=your_secure_password
 If the middleware doesn't load automatically, add to `config/application.rb`:
 
 ```ruby
-require 'rails_health_checker'
+require 'rails_health_monitor'
 
 class Application < Rails::Application
-  config.middleware.use RailsHealthChecker::DashboardMiddleware
+  config.middleware.use RailsHealthMonitor::DashboardMiddleware
 end
 ```
 
@@ -152,10 +152,10 @@ This will:
 
 ## Links
 
-- 🌐 **[Documentation & Demo](https://rails-health-checker.netlify.app)**
-- 📦 **[RubyGems](https://rubygems.org/gems/rails-health-checker)**
-- 🐙 **[GitHub Repository](https://github.com/ArshdeepGrover/rails-health-checker)**
-- 🐛 **[Issue Tracker](https://github.com/ArshdeepGrover/rails-health-checker/issues)**
+- 🌐 **[Documentation & Demo](https://rails-health-monitor.netlify.app)**
+- 📦 **[RubyGems](https://rubygems.org/gems/rails-health-monitor)**
+- 🐙 **[GitHub Repository](https://github.com/ArshdeepGrover/rails-health-monitor)**
+- 🐛 **[Issue Tracker](https://github.com/ArshdeepGrover/rails-health-monitor/issues)**
 
 ## Contributing
 

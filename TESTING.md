@@ -2,7 +2,7 @@
 
 ## 1. Basic Functionality Test
 ```bash
-cd rails_health_checker
+cd rails_health_monitor
 ruby simple_test.rb
 ```
 
@@ -10,7 +10,7 @@ ruby simple_test.rb
 
 ### Add to Gemfile:
 ```ruby
-gem 'rails_health_checker', path: '/path/to/rails_health_checker'
+gem 'rails_health_monitor', path: '/path/to/rails_health_monitor'
 ```
 
 ### Run bundle:
@@ -40,7 +40,7 @@ curl http://localhost:3000/health
 cd /Users/arshdeepsingh/Desktop/personal/PROJECTS/FinaSync/FinaSync-rails
 
 # Add gem to Gemfile
-echo "gem 'rails_health_checker', path: '../rails_health_checker'" >> Gemfile
+echo "gem 'rails_health_monitor', path: '../rails_health_monitor'" >> Gemfile
 
 # Install
 bundle install
@@ -51,7 +51,7 @@ rake health:check
 
 ## 4. RSpec Tests
 ```bash
-cd rails_health_checker
+cd rails_health_monitor
 bundle install
 bundle exec rspec
 ```
