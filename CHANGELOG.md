@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.3] - 2025-11-09
 
 ### Changed
+- Version bump to 1.1.3
+
+## [1.1.3] - 2025-11-09
+
+### Changed
 - Version bump
 
 ## [1.1.2] - 2025-11-09
