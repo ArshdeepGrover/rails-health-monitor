@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2025-11-09
 
 ### Added
-- Initial release of RailsHealthChecker gem
+- Initial release of RailsHealthMonitor gem (renamed from RailsHealthChecker)
 - Rails version compatibility checking
 - Ruby version validation
 - Database connectivity testing
@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - System information display
 - Priority actions with color-coded urgency
 - Comprehensive health reporting
+- Troubleshooting documentation for common middleware issues
 
 ### Features
 - 🏥 Visual health overview with status indicators

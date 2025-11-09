@@ -104,17 +104,54 @@ export HEALTH_PASSWORD=your_secure_password
 - Username: `admin`
 - Password: `health123`
 
-### Manual Middleware Setup (if needed)
+### Manual Setup Options
 
-If the middleware doesn't load automatically, add to `config/application.rb`:
+**Option 1: Middleware Setup (Recommended)**
+Add to `config/application.rb`:
 
 ```ruby
 require 'rails_health_monitor'
 
-class Application < Rails::Application
-  config.middleware.use RailsHealthMonitor::DashboardMiddleware
+module YourAppName
+  class Application < Rails::Application
+    config.middleware.use RailsHealthMonitor::DashboardMiddleware
+  end
 end
 ```
+
+**Option 2: Routes Setup (Alternative)**
+Add to `config/routes.rb`:
+
+```ruby
+Rails.application.routes.draw do
+  get '/health', to: proc { |env|
+    results = RailsHealthMonitor.check
+    [200, {'Content-Type' => 'application/json'}, [results.to_json]]
+  }
+end
+```
+
+**Then restart your server:**
+```bash
+rails server
+```
+
+## Troubleshooting
+
+### "No route matches [GET] '/health'" Error
+
+If you get this error, the middleware isn't loaded. Try:
+
+1. **Manual middleware setup** (see above)
+2. **Restart your Rails server**:
+   ```bash
+   rails server
+   ```
+3. **Verify gem installation**:
+   ```bash
+   bundle install
+   bundle list | grep rails-health-monitor
+   ```
 
 ## Development
 
