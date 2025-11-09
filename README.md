@@ -1,6 +1,12 @@
 # RailsHealthChecker
 
+[![Gem Version](https://badge.fury.io/rb/rails-health-checker.svg)](https://badge.fury.io/rb/rails-health-checker)
+[![Documentation](https://img.shields.io/badge/docs-rails--health--checker.netlify.app-blue)](https://rails-health-checker.netlify.app)
+[![GitHub](https://img.shields.io/github/license/ArshdeepGrover/rails-health-checker)](https://github.com/ArshdeepGrover/rails-health-checker/blob/main/LICENSE)
+
 A comprehensive health checking gem for Ruby on Rails applications and their dependencies.
+
+🌐 **[Live Documentation & Demo](https://rails-health-checker.netlify.app)**
 
 ## Features
 
@@ -24,6 +30,12 @@ And then execute:
 
 ```bash
 bundle install
+```
+
+Or install it directly:
+
+```bash
+gem install rails-health-checker
 ```
 
 ## Usage
@@ -118,6 +130,33 @@ To run tests:
 bundle exec rspec
 ```
 
+### Building and Publishing
+
+To build the gem:
+
+```bash
+bundle exec rake build
+```
+
+To release a new version:
+
+```bash
+bundle exec rake release
+```
+
+This will:
+1. Build the gem
+2. Create a git tag for the version
+3. Push the tag to GitHub
+4. Push the gem to RubyGems.org
+
+## Links
+
+- 🌐 **[Documentation & Demo](https://rails-health-checker.netlify.app)**
+- 📦 **[RubyGems](https://rubygems.org/gems/rails-health-checker)**
+- 🐙 **[GitHub Repository](https://github.com/ArshdeepGrover/rails-health-checker)**
+- 🐛 **[Issue Tracker](https://github.com/ArshdeepGrover/rails-health-checker/issues)**
+
 ## Contributing
 
 1. Fork the repository
@@ -129,3 +168,7 @@ bundle exec rspec
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+**Made with ❤️ by [Arshdeep Singh](https://github.com/ArshdeepGrover)**

@@ -6,15 +6,17 @@ Gem::Specification.new do |spec|
   spec.authors = ["Arshdeep Singh"]
   spec.email = ["arsh199820@gmail.com"]
 
-  spec.summary = "Health checker for Rails projects and their dependencies"
-  spec.description = "A Ruby gem that provides comprehensive health checking for Rails applications and their gem dependencies"
-  spec.homepage = "https://github.com/ArshdeepGrover/rails-health-checker"
+  spec.summary = "Comprehensive health checker for Rails applications and dependencies"
+  spec.description = "A Ruby gem that provides comprehensive health checking for Rails applications, including database connectivity, gem dependencies, security vulnerabilities, and system health monitoring with a web dashboard."
+  spec.homepage = "https://rails-health-checker.netlify.app"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["homepage_uri"] = "https://rails-health-checker.netlify.app"
   spec.metadata["source_code_uri"] = "https://github.com/ArshdeepGrover/rails-health-checker"
   spec.metadata["changelog_uri"] = "https://github.com/ArshdeepGrover/rails-health-checker/blob/main/CHANGELOG.md"
+  spec.metadata["documentation_uri"] = "https://rails-health-checker.netlify.app"
+  spec.metadata["bug_tracker_uri"] = "https://github.com/ArshdeepGrover/rails-health-checker/issues"
 
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|
